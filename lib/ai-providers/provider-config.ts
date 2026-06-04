@@ -5,7 +5,7 @@ const PROVIDER_ORDER: ProviderKey[] = ['grok', 'gemini', 'minimax'];
 const PROVIDER_DEFAULT_MODELS: Record<ProviderKey, string> = {
   grok: 'grok-4-1-fast-non-reasoning',
   gemini: 'gemini-2.5-flash-lite',
-  minimax: 'MiniMax-M2.7',
+  minimax: 'MiniMax-M3',
 };
 
 const PROVIDER_BEHAVIORS: Record<ProviderKey, ProviderBehavior> = {
