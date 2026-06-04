@@ -117,7 +117,7 @@ Create `.env.local` in the repo root:
 | `CSRF_SALT` | yes | Long random string used to sign CSRF tokens |
 | `AI_PROVIDER` | recommended | `minimax`, `grok`, or `gemini`; determines which server-side text provider adapter is used |
 | `NEXT_PUBLIC_AI_PROVIDER` | recommended | Set this to match `AI_PROVIDER` for consistent client/server provider behavior in Phase 1 |
-| `AI_DEFAULT_MODEL` | recommended | Override provider default model (for Phase 1, `MiniMax-M2.7`) |
+| `AI_DEFAULT_MODEL` | recommended | Override provider default model (currently `MiniMax-M3`) |
 | `NEXT_PUBLIC_AI_MODEL` | optional | Client-side model hint for UI/config display; does not control server routing by itself |
 | `NEXT_PUBLIC_APP_URL` | optional | Canonical app URL (defaults to `http://localhost:3000`) |
 | `NEXT_PUBLIC_ENABLE_TRANSLATION_SELECTOR` | optional | Set to `true` to show the transcript translation dropdown (hidden otherwise) |
@@ -128,7 +128,7 @@ Create `.env.local` in the repo root:
 
 <sup>\**</sup> `GEMINI_API_KEY` is still required if image generation should work, because `app/api/generate-image/route.ts` remains Gemini-backed.
 
-> Recommended Phase 1 setup: `AI_PROVIDER=minimax`, `NEXT_PUBLIC_AI_PROVIDER=minimax`, `AI_DEFAULT_MODEL=MiniMax-M2.7`, `MINIMAX_API_KEY=...`. Keep `GEMINI_API_KEY` set if you want image generation, and optionally keep `XAI_API_KEY` available for Grok fallback/testing.
+> Recommended setup: `AI_PROVIDER=minimax`, `NEXT_PUBLIC_AI_PROVIDER=minimax`, `AI_DEFAULT_MODEL=MiniMax-M3`, `MINIMAX_API_KEY=...`. Keep `GEMINI_API_KEY` set if you want image generation, and optionally keep `XAI_API_KEY` available for Grok fallback/testing.
 
 > Generate a unique `CSRF_SALT` (e.g., `openssl rand -base64 32`). `UNLIMITED_VIDEO_USERS` entries are normalized to lowercase.
 

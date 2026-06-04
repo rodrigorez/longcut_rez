@@ -42,7 +42,7 @@ test('MiniMax adapter strips <think> tags and normalizes usage', async () => {
       async () =>
         new Response(
           JSON.stringify({
-            model: 'MiniMax-M2.7',
+            model: 'MiniMax-M3',
             choices: [
               {
                 message: {
@@ -64,7 +64,7 @@ test('MiniMax adapter strips <think> tags and normalizes usage', async () => {
 
         assert.equal(result.content, '{"ok":true}');
         assert.equal(result.provider, 'minimax');
-        assert.equal(result.model, 'MiniMax-M2.7');
+        assert.equal(result.model, 'MiniMax-M3');
         assert.deepEqual(result.usage, {
           promptTokens: 11,
           completionTokens: 7,
@@ -116,7 +116,7 @@ test('MiniMax adapter uses prompt-based schema compatibility when zodSchema is p
 
         return new Response(
           JSON.stringify({
-            model: 'MiniMax-M2.7',
+            model: 'MiniMax-M3',
             choices: [
               {
                 message: {
@@ -158,7 +158,7 @@ test('MiniMax adapter coerces metadata values to strings for API compatibility',
 
         return new Response(
           JSON.stringify({
-            model: 'MiniMax-M2.7',
+            model: 'MiniMax-M3',
             choices: [
               {
                 message: {

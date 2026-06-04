@@ -2,7 +2,7 @@ import { z } from 'zod';
 import type { ProviderAdapter, ProviderGenerateParams, ProviderGenerateResult } from './types';
 
 const PROVIDER_NAME = 'minimax';
-const DEFAULT_MODEL = 'MiniMax-M2.7';
+const DEFAULT_MODEL = 'MiniMax-M3';
 const DEFAULT_BASE_URL = 'https://api.minimax.io/v1';
 
 function buildAbortController(timeoutMs?: number) {

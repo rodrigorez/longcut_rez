@@ -66,8 +66,8 @@ test('deterministic fallback order prefers Grok before Gemini before MiniMax', (
   assert.deepEqual(getProviderFallbackOrder('grok'), ['gemini', 'minimax']);
 });
 
-test('provider default model returns MiniMax-M2.7 for MiniMax', () => {
-  assert.equal(getProviderDefaultModel('minimax'), 'MiniMax-M2.7');
+test('provider default model returns MiniMax-M3 for MiniMax', () => {
+  assert.equal(getProviderDefaultModel('minimax'), 'MiniMax-M3');
 });
 
 test('provider model defaults derive fast and pro topic models from configured MiniMax provider', () => {
@@ -81,9 +81,9 @@ test('provider model defaults derive fast and pro topic models from configured M
     },
     () => {
       assert.deepEqual(getProviderModelDefaults(), {
-        defaultModel: 'MiniMax-M2.7',
-        fastModel: 'MiniMax-M2.7',
-        proModel: 'MiniMax-M2.7',
+        defaultModel: 'MiniMax-M3',
+        fastModel: 'MiniMax-M3',
+        proModel: 'MiniMax-M3',
       });
     }
   );
@@ -104,9 +104,9 @@ test('effective provider resolves to MiniMax when only MINIMAX_API_KEY is presen
     () => {
       assert.equal(getEffectiveProviderKey(), 'minimax');
       assert.deepEqual(getProviderModelDefaults(), {
-        defaultModel: 'MiniMax-M2.7',
-        fastModel: 'MiniMax-M2.7',
-        proModel: 'MiniMax-M2.7',
+        defaultModel: 'MiniMax-M3',
+        fastModel: 'MiniMax-M3',
+        proModel: 'MiniMax-M3',
       });
     }
   );

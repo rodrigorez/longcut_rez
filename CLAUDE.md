@@ -326,7 +326,7 @@ Required in `.env.local`:
 Also commonly needed:
 - `AI_PROVIDER`: Server-side text provider selection (`minimax`, `grok`, or `gemini`)
 - `NEXT_PUBLIC_AI_PROVIDER`: Set this to match `AI_PROVIDER` for consistent client/server provider behavior in Phase 1
-- `AI_DEFAULT_MODEL`: Optional text model override (Phase 1 default: `MiniMax-M2.7`)
+- `AI_DEFAULT_MODEL`: Optional text model override (current default: `MiniMax-M3`)
 - `NEXT_PUBLIC_AI_MODEL`: Optional client-side model hint; it does not select the server provider by itself
 - `GEMINI_API_KEY`: Still required for `app/api/generate-image/route.ts`
 

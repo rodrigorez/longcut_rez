@@ -40,7 +40,7 @@ test('model schema defaults to MiniMax model when only MINIMAX_API_KEY is presen
     },
     async () => {
       const { modelSchema } = await importFreshValidationModule();
-      assert.equal(modelSchema.parse(undefined), 'MiniMax-M2.7');
+      assert.equal(modelSchema.parse(undefined), 'MiniMax-M3');
     }
   );
 });
