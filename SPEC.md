@@ -4,6 +4,7 @@
 > **Fork:** [rodrigorez/longcut_rez](https://github.com/rodrigorez/longcut_rez)
 > **Modificações por:** rodrigorez
 > **Data da spec:** Junho 2026
+> **Arquitetura original:** [`ORIGINAL_ARCHITECTURE.md`](ORIGINAL_ARCHITECTURE.md) (engenharia reversa completa)
 
 ---
 
@@ -12,9 +13,9 @@
 | Item | Valor |
 |---|---|
 | Branch | `main` |
-| Último commit fork | `ff98c31` — chore: initial fork setup |
+| Último commit fork | `4a5acf2` — docs: remove .orig reference from README |
 | Último commit original | `c80c874` — Merge pull request #66 (SamuelZ12) |
-| Total commits | 484 (483 originais + 1 nosso) |
+| Total commits | 487 (483 originais + 4 nossos) |
 | Remote | `https://github.com/rodrigorez/longcut_rez.git` |
 | Backup original | `.orig/` — 253 arquivos, cópia fiel do fork |
 
@@ -56,6 +57,7 @@ O diretório `.orig/` contém o código fonte original do fork `rodrigorez/longc
 ├── eslint                      ← ESLint config
 ├── eslint.config.mjs           ← ESLint flat config
 ├── middleware.ts                ← Supabase session + CSP headers
+├── nextjs@0.1.0                ← 0 bytes (auto-gerado)
 ├── next.config.ts              ← Next.js config
 ├── package.json                ← Dependências (Next 15, React 19, etc.)
 ├── package-lock.json           ← Lock file (npm)
