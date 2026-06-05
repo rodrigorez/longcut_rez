@@ -18,6 +18,68 @@
 | Total commits | 487 (483 originais + 4 nossos) |
 | Remote | `https://github.com/rodrigorez/longcut_rez.git` |
 | Backup original | `.orig/` — 253 arquivos, cópia fiel do fork |
+| Skills carregadas | powershell-windows, react-best-practices, clean-code, tailwind-patterns, lint-and-validate, plan-writing |
+
+---
+
+## Fase 0 — Análise Técnica com Skills
+
+### Status de Saúde do Projeto
+
+| Verificação | Resultado |
+|---|---|
+| ESLint | **0 erros**, 10 warnings (unused vars — herança original) |
+| TypeScript (`tsc --noEmit`) | **0 erros** |
+| Build | **Pendente** (sem `.env.local`) |
+| Dependências instaladas | Sim (688 pacotes) |
+| npm audit | 16 vulnerabilidades (1 critical protobufjs, 6 high — todas transitivas, comuns em Next.js + Supabase) |
+
+### Stack Tecnológica Atual
+
+| Tecnologia | Versão | Notas |
+|---|---|---|
+| Next.js | 15.5.7 | App Router, Turbopack |
+| React | 19.1.2 | Server Components, Actions |
+| TypeScript | 5.9.2 | Strict mode |
+| Tailwind CSS | 4.1.12 | CSS-first (`@tailwindcss/postcss`), sem `tailwind.config.ts` |
+| Zod | 4.1.9 | Validação em APIs e schemas |
+| Supabase SSR | `@supabase/ssr` | Browser + Server + Middleware clients |
+| Radix UI | v1+ | 14 componentes (dialog, dropdown, tabs, etc.) |
+
+### Análise por Skill
+
+#### 1. React Best Practices
+- ✅ **Waterfalls**: Análise inicial usa `Promise.allSettled` para paralelizar topics + summary
+- ✅ **Bundle**: Dynamic imports não são usados extensivamente — mas o bundle atual não é crítico
+- ✅ **Server Components**: Layout é server component, páginas usam client components onde necessário
+- ⚠️ **Oportunidade**: `ORIGINAL_ARCHITECTURE.md` documenta 40+ `useState` no AnalyzePage — refatoração futura pode usar `useReducer` ou Context
+- ✅ **AuthContext**: Padrão correto com `useMemo` + `onAuthStateChange`
+
+#### 2. Clean Code
+- ✅ **Naming**: PascalCase para componentes, camelCase para funções/vars, nomes descritivos
+- ✅ **Separation**: Provider adapter pattern, tipos separados, schemas em arquivo próprio
+- ⚠️ **Tamanho**: `ai-processing.ts` e AnalyzePage são longos (~400+ linhas) — herança do original, manteremos sem refatorar
+- ✅ **Error handling**: Guard clauses, early returns, catch unificado
+
+#### 3. Tailwind v4 Patterns
+- ✅ **CSS-first**: `postcss.config.mjs` com `@tailwindcss/postcss`, sem JS config
+- ✅ **Component extraction**: shadcn/ui components (Radix + Tailwind)
+- ✅ **Mobile-first**: Classes sem prefixo para mobile, `lg:`/`md:` para desktop
+- ⚠️ **OKLCH**: Projeto usa notação HSL (`getTopicHSLColor`) — compatível com v4
+
+#### 4. Lint & Validate
+- ✅ **ESLint 9.37.0**: Flat config (`eslint.config.mjs`), zero erros
+- ✅ **TypeScript strict**: `strict: true` no `tsconfig.json`
+- ⚠️ **Audit**: `npm audit fix` recomendado para vulnerabilidades transitivas
+
+### Recomendações Técnicas (Carry-over para Fases Futuras)
+
+1. **Provider caching**: Registry já implementa singleton pattern com `providerCache` — DeepSeek seguirá o mesmo padrão
+2. **API pattern**: Toda rota usa `withSecurity()` — export e Google Drive seguirão o padrão
+3. **CSRF**: Notas e state-changes autenticados usam `csrfFetch` + `X-CSRF-Token`
+4. **Component pattern**: `forwardRef` + `useImperativeHandle` para controle imperativo
+5. **Type pattern**: Tipos centralizados em `lib/types.ts` — novas features estendem interfaces existentes
+6. **Config pattern**: Provider config é CSS-first + env-var-driven (sem hardcoded toggle)
 
 ---
 
