@@ -5,7 +5,6 @@
 LongCut transforma vídeos longos do YouTube em um workspace de aprendizado estruturado. Cole uma URL e o app gera destaques, respostas com IA com timestamps, e um local para capturar suas anotações — absorva vídeos de uma hora em minutos.
 
 **Projeto original:** [SamuelZ12/longcut](https://github.com/SamuelZ12/longcut) (AGPL-3.0)  
-**Código original preservado em:** `.orig/`  
 **Roadmap de modificações:** [`SPEC.md`](SPEC.md)
 
 ## Visão Geral
