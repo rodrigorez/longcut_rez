@@ -5,6 +5,20 @@
 
 ---
 
+## [0.0.7] — 2026-06-05 — SPEC Reestruturado
+
+### Adicionado
+- `SPEC.md`: **Fase 1 — YouTube Chapters** (extração do playerOverlays + timeline + transcrição)
+- `SPEC.md`: **Preferência de Idioma** dentro da Fase 8 (Setup Final)
+- `SPEC.md`: Re-numeração de todas as fases (1→2, 2→3, ..., 7→8)
+
+### Commits
+| SHA | Descrição |
+|-----|-----------|
+| (pending) | docs: restructure SPEC with Chapters (Fase 1) and language preference (Fase 8) |
+
+---
+
 ## [0.0.6] — 2026-06-05 — Fase 0 Concluída
 
 ### Adicionado
